@@ -8,6 +8,21 @@ export const getAllIssues = async () =>{
     //console.log(await allIssues.json())
 }
 
-export const getOneIssue = async ()=>{
+export const getOneIssue = async (id)=>{
+    const response = await fetch(`http://localhost:3000/api/issue/${id}`)
+    //console.log(response.json())
+    return response.json()
+}
 
+
+export const createIssue = async (issue) =>  {
+    console.log(issue)
+    const response = await fetch('http://localhost:3000/api/issue',{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(issue)
+    })
+    if(response.status == 200) {
+        console.log("Issue created")
+    }
 }

@@ -6,6 +6,9 @@ const schema = z.object({
     "team":z.string(),
     "member":z.string(),
     "status":z.string(),
+    "comments":z.string(),
+    "createdAt":z.string(),
+    "closeDate":z.string(),
 })
 
 export default schema

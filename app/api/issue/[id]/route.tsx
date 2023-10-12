@@ -19,6 +19,7 @@ export async function GET(req:NextRequest, {params} : Props){
         }
     })
 
+    console.log(issue)
     return NextResponse.json(issue,{status:200})
 }
 

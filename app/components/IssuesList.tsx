@@ -27,7 +27,7 @@ const IssuesList = () => {
     gettingAllIssues()
   },[])
   return (
-    <div>
+    <div className='flex flex-col space-y-4'>
           {issues && issues.map((issue,index)=>{
             return <div key={index}>
                       <IssueListCard issue={issue} />

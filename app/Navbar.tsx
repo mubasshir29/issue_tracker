@@ -3,7 +3,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className='bg-white px-8 py-4 shadow-sm'>
+    <div className='bg-white px-8 py-4 shadow-sm sticky top-0 left-0 z-10'>
         <nav className='w-full flex justify-between items-center'>
             <div>
                 <Link href='/'><h1 className='text-2xl font-bold'>Issue Tracker</h1></Link>

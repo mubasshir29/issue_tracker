@@ -26,6 +26,7 @@ export async function POST(req:NextRequest){
             description:reqBody.description,
             team:reqBody.team,
             member:reqBody.member,
+            comments:reqBody.comments,
             status:reqBody.status,
             createdAt : moment().format('D-MM-YYYY'),
             closeDate: moment().add(3,"days").format('D-MM-YYYY')

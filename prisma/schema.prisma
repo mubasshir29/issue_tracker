@@ -10,13 +10,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Users{
+  id Int @id @default(autoincrement())
+  fullname String
+  team Team @relation(fields:[teamId],references:[id])
+  teamId Int
+  email String
+}
+
 model Issue{
   id Int @id @default(autoincrement())
   title String
-  description String
+  description String @db.VarChar(500)
+  priority String @default("Low")
   team String
   member String
   status String
+  comments Comment[]
   createdAt String
   closeDate String
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+  user String
+  message String @db.VarChar(500)
+
+  issue Issue @relation(fields : [issueId], references : [id])
+  issueId Int
+}
+
+model Team{
+  id Int @id @default(autoincrement())
+  name String
+  description String
+  users Users[]
 }
