@@ -43,6 +43,6 @@ model Comment {
 model Team{
   id Int @id @default(autoincrement())
   name String
-  description String
+  description String @db.VarChar(500)
   users Users[]
 }
